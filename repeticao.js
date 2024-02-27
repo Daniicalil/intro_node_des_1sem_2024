@@ -47,22 +47,19 @@ let entrada = require('prompt-sync')();
 
 // entrada();
 
-const senha = '123456'
-let cont = 1;
-for (let cont = 1; cont <= 3; cont++) {
+let senha = '123456'
+let snCorreta = false;
+
+for (let index = 1; index <= 3; index++) {
     let senhaDig = entrada('Digite a  senha para acessar o sistema: ');
 
-    if (senha !== senhaDig) {
-        
+    if (senha === senhaDig) {
+        snCorreta = true;
+        break;
     }  
 }
 
-if (cont >= 3) {
-        console.log('Acesso não autorizado');
-    }else {
-        console.log('Acesso autorizado');
-    }
-
+    console.log(snCorreta ? 'Acesso autorizado' : 'Acesso negado');
     entrada();
 
 // let sn = '123456';
